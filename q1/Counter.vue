@@ -1,9 +1,12 @@
+
+
 <template>
     <div>
-        <h1>Counter: <!-- Put counter here --></h1>
-        <button>Increment</button>
-        <button>Decrement</button>
-        <button>Reset</button>
+
+        <h1>Counter: {{count}}</h1>
+        <button @click="increment">Increment</button>
+        <button @click="decrement">Decrement</button>
+        <button @click="reset">Reset</button>
     </div>
 </template>
 
@@ -22,4 +25,21 @@
     2. Implement methods to increment, decrement, and reset the count.
     3. Use the @click directive to call these methods when the buttons are clicked.
 */
+
+import {ref} from 'vue'
+
+const count = ref(0)
+
+function increment(){
+  count.value++
+}
+
+function decrement(){
+  count.value--
+}
+
+function reset(){
+  count.value = 0
+}
+
 </script>

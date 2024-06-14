@@ -12,3 +12,7 @@ The provided starter code includes only the `.vue` Single-File Component. **You 
 ## Additional Notes
 
 If you'd like, use this space to include thoughts, questions, or documentation you'd like to supplement your code.
+
+Just a bit of background, I am not super familiar with Vue, certainly not outside of some small personal projects. The documentation provided was super helpful though and helped me to pick up what I needed very quickly. 
+I was able to read the documentation provided and have a working model running in the Vue SFC Playground (https://play.vuejs.org) fairly quickly. One of the things I am the most proud of is my ability to pick up new skills
+(like frameworks and languages) quickly and I hope that this was a helpful demonstration of that.

@@ -1,3 +1,5 @@
+import re
+
 def anonymize_names_parta(text: str):
     """
     Anonymizes names in the given text by replacing them with 'ANON'. Assume names are capitalized, and no other words are.
@@ -17,10 +19,26 @@ def anonymize_names_parta(text: str):
  
     Returns:
         str: The text with names anonymized.
+
+
+
+    Test cases:
+
+        "John is writing this test for the Senate Appropriations Committee" 
+        -> "ANON is writing this test for the ANON ANON ANON" 
+
+        "John went to get lunch with peter, Kevin, and Tim in NYC."
+        -> "ANON went to get lunch with peter, ANON, and ANON."
+
+        "Peter was upset that John did not correctly anonymize him in the above example. He also was about edge case of capitalization of words that are not proper nouns, like at the beginning of a sentence."
+        -> "ANON was upset that ANON did not correctly anonymize him in the above example. ANON also was about edge case of capitalization of words that are not proper nouns, like at the beginning of a sentence."
     """
-    # Replace all capitalized words with 'ANON' (a regular expression might be helpful; see the `re` module)
-    anonymized_text = "..."
+    
+    pattern = r'\b[A-Z].*?\b'    
+    anonymized_text = re.sub(pattern, "ANON", text)
     return anonymized_text
+   
+   
  
 def anonymize_names_partb(text: str):
     """
@@ -34,9 +52,22 @@ def anonymize_names_partb(text: str):
     Returns:
         str: The text with names anonymized.
     """
-    # Placeholder implementation: This needs heuristics to identify names
-    anonymized_text = text  # This is where the logic will go
+
+    """
+    The first decision I would make here is (at least for a first draft implementation) to implement the same rule about capitalization. We can't always assume proper grammar but proper nouns are a great place to start even without the guarantee.
+    For now I kept the answer to this, though my next steps for improvement are below.
+
+    The next heuristic I would come to is to consult some sort of a list of names. I haven't done a problem like this before but there might be an API, or have some sort of local list. This brings some immediate issues with time to solve though.
+
+    While I am less familiar with machine learning algorithms we are in a great time for natural language processing, using some of these tools to help identify names and other information we want to anonymize is another great way, and will likely be 
+    better for speed.
+    """
+    
+    pattern = r'\b[A-Z].*?\b'    
+    anonymized_text = re.sub(pattern, "ANON", text)
     return anonymized_text
+    
+
  
  
 if __name__ == '__main__':
