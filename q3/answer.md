@@ -9,6 +9,13 @@ WHERE party="Democrat"
 
 Question A(ii)
 
+SELECT requests.request_id 
+FROM requests
+INNER JOIN senators ON requests.senator_id=senators.senator_id
+WHERE party="Democrat" and DISTINCT last_name
+
+(For the above question, I skipped this and returned back to it without as much time as I needed and was not able to finish. My thought was to find a way to ensure that there was only last name per request, but did not have enough time to research this point and didn't know the answer off the top of my head.)
+
 Part B:
 
 B1: So the immediate thought that comes to mind for me is a fairly straightforward relational database, likely one that is referenced from the main table (for example, `requests` from the above question).
